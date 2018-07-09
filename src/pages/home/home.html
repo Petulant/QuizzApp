@@ -1,14 +1,814 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar color="gold">
+    <b><ion-title>KidsQuizzApp</ion-title></b>
   </ion-navbar>
+  
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+<ion-content padding> 
+
+        <div *ngIf="Page0" class="main">
+                <!-- <p>Learning is Fun</p> -->
+
+                <img src="../../assets/imgs/KidsQuizz.jpg" id="movePic"><br>
+
+                <button ion-button color="brown" (click)="startButton()"  id="press">Press To Start Playing</button>
+                </div>
+<!-- ========================================================================================== -->
+    <div *ngIf="Page1">
+    <h5>CategoryA</h5>
+    
+        <div class="timeColor">
+            <div class="timer1">
+             Timer :{{timerVal}}
+            </div>
+        </div>
+
+    <h5>Final ScoreA : {{num}}/5</h5>
+                                          <!-- Question1 -->
+    <!-- ========================================================================================== -->
+  <div class="nav">
+
+  <h6>1. which season does trees start to fall leaves?</h6>
+
+   <ion-item>
+     <ion-label >Summer</ion-label>
+    <ion-checkbox [(ngModel)]="Summer" color="brown" ></ion-checkbox>
+   </ion-item>
+
+   <ion-item>
+      <ion-label>Winter</ion-label>
+     <ion-checkbox [(ngModel)]="Winter"  color="brown" ></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Autumn</ion-label>
+       <ion-checkbox [(ngModel)]="Autumn" color="brown" value="correct" ></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Spring</ion-label>
+         <ion-checkbox [(ngModel)]="Spring"  color="brown" ></ion-checkbox>
+        </ion-item>
+      </div>
+
+      <div *ngIf="Answer">
+
+      <div class="fontt2">
+        <div class="show">
+            <p *ngIf="Summer== true ">Incorrect: Answer is Autumn</p>
+            <p *ngIf="Winter== true ">Incorrect: Answer is Autumn</p>
+            <p *ngIf="Spring== true ">Incorrect: Answer is Autumn/p>
+        </div>
+        </div>
+
+        <div class="fontt"> 
+            <p *ngIf="Autumn== true ">Your answer is correct</p>
+            </div>
+        </div>
+           
+
+                                       <!-- Question2 -->
+  <!-- =========================================================================================== -->
+       
+  <div class="nav">
+        <h6>2. which season has the shortestdays but the longest night?</h6>
+     
+         <ion-item>
+             <ion-label>Autumn</ion-label>
+            <ion-checkbox [(ngModel)]="Autumn2"  color="brown"  ></ion-checkbox>
+           </ion-item>
+
+           <ion-item>
+              <ion-label>Winter</ion-label>
+             <ion-checkbox [(ngModel)]="Winter2"  color="brown" value="correct" ></ion-checkbox>
+            </ion-item>
+        
+     
+           <ion-item>
+               <ion-label>Spring</ion-label>
+              <ion-checkbox [(ngModel)]="Spring2"  color="brown" ></ion-checkbox>
+             </ion-item>
+
+             <ion-item>
+                <ion-label>Summer</ion-label>
+               <ion-checkbox [(ngModel)]="Summer2"   color="brown"  ></ion-checkbox>
+              </ion-item>
+      
+            </div>
+
+              
+            <div *ngIf="Answer">
+              <div class="show2">
+                  <div class="fontt2">
+                  <p *ngIf="Summer2== true ">Incorrect: Answer is Winter</p>
+                  <p *ngIf="Spring2== true ">Incorrect: Answer is Winter</p>
+                  <p *ngIf="Autumn2== true ">Incorrect: Answer is Winter</p>
+
+           </div>
+        
+
+              <div class="fontt"> 
+                  <p *ngIf="Winter2== true ">Your answer is correct</p>
+             </div>
+             </div>
+             </div>
+       
+
+                                   <!-- Quetion3 -->
+<!-- =========================================================================================== -->
+
+        <div class="nav">
+              <h6>3. What two seasons make the shortest shadow?</h6>
+     
+              <ion-item>
+                  <ion-label>Autumn and Summer</ion-label>
+                 <ion-checkbox [(ngModel)]="Autumn3"  color="brown" value="correct" ></ion-checkbox>
+                </ion-item>
+     
+                <ion-item>
+                   <ion-label>Winter and Autumn</ion-label>
+                  <ion-checkbox [(ngModel)]="Winter3"  color="brown" ></ion-checkbox>
+                 </ion-item>
+             
+          
+                <ion-item>
+                    <ion-label>Spring and summer</ion-label>
+                   <ion-checkbox [(ngModel)]="Spring3"  color="brown" ></ion-checkbox>
+                  </ion-item>
+     
+                  <ion-item>
+                     <ion-label>Summer  and winter</ion-label>
+                    <ion-checkbox [(ngModel)]="Summer3"  color="brown"   ></ion-checkbox>
+                   </ion-item>
+                   </div>
+
+                   <div *ngIf="Answer">  
+              <div class="show3">
+                  <div class="fontt2">
+                      <p *ngIf="Winter3== true ">Incorrect: Answer is Autumn and Summer</p>
+                      <p *ngIf="Spring3== true ">Incorrect: Answer is Autumn and Summer</p>
+                      <p *ngIf="Summer3== true ">Incorrect: Answer is Autumn and Summer</p>
+            
+                    </div>
+                    </div>
+
+                    <div class="fontt"> 
+                        <p *ngIf="Autumn3== true ">Your answer is correct</p>
+                      </div>
+                    </div> 
+
+                            <!-- Question4 -->
+<!-- ============================================================================================== -->
+
+              
+        <div class="nav">
+               <h6>4. What season do trees and plants open up flower buds as the weather gets warmer?</h6>
+
+                   <ion-item>
+                      <ion-label>Autumn</ion-label>
+                     <ion-checkbox [(ngModel)]="Autumn4"  color="brown" ></ion-checkbox>
+                    </ion-item>
+         
+                    <ion-item>
+                       <ion-label>Winter</ion-label>
+                      <ion-checkbox [(ngModel)]="Winter4"  color="brown" ></ion-checkbox>
+                     </ion-item>
+                 
+              
+                    <ion-item>
+                        <ion-label>Spring</ion-label>
+                       <ion-checkbox [(ngModel)]="Spring4"  color="brown" value="correct"></ion-checkbox>
+                      </ion-item>
+         
+                      <ion-item>
+                         <ion-label>Summer</ion-label>
+                        <ion-checkbox [(ngModel)]="Summer4"  color="brown"    ></ion-checkbox>
+                       </ion-item>
+                       </div>
+           
+                       <div *ngIf="Answer"> 
+                       <div class="show4">
+                          <div class="fontt2">
+                              <p *ngIf="Winter4== true ">Incorrect: answer is Spring</p>
+                              <p *ngIf="Autumn4== true ">Incorrect: answer is Spring</p>
+                              <p *ngIf="Summer4== true ">Incorrect: answer is Spring</p>
+                            </div>
+                            </div>
+
+                            <div class="fontt">
+                                <p *ngIf="Spring4== true ">Your answer is correct</p>
+                              </div>
+                              </div>
+
+                                            <!-- Question5 -->
+  <!-- =============================================================================================== -->
+             <div class="nav">
+                   <h6>5. If the sun is positioned in the top of the sky what season should it be?</h6>
+                   <ion-item>
+                      <ion-label>Winter</ion-label>
+                     <ion-checkbox [(ngModel)]="Winter5"  color="brown" ></ion-checkbox>
+                    </ion-item>
+         
+                    <ion-item>
+                       <ion-label>Summer</ion-label>
+                      <ion-checkbox [(ngModel)]="Summer5"  color="brown" value="correct"></ion-checkbox>
+                     </ion-item>
+                 
+              
+                    <ion-item>
+                        <ion-label>Spring</ion-label>
+                       <ion-checkbox [(ngModel)]="Spring5"  color="brown" ></ion-checkbox>
+                      </ion-item>
+         
+                      <ion-item>
+                         <ion-label>Autumn</ion-label>
+                        <ion-checkbox [(ngModel)]="Autumn5"  color="brown"  ></ion-checkbox>
+                       </ion-item>
+                       </div>
+                     
+                       <div *ngIf="Answer"> 
+                       <div class="show5">
+                          <div class="fontt2">
+                              <p *ngIf="Winter5== true ">Incorrect: answer is Summer</p>
+                              <p *ngIf="Autumn5== true ">IIncorrect: answer is Summer</p>
+                              <p *ngIf="Spring5== true ">Incorrect: answer is Summer</p>
+                            </div>
+                            </div>
+
+                            <div class="fontt">
+                                <p *ngIf="Summer5== true ">Your answer is correct</p>
+                            </div>
+                            </div>
+                          
+
+         
+         <ion-row>
+               
+                <button ion-button  id="btn"  color="brown" (click)="myButton()">Answers</button>
+                <button ion-button  id="bt"  color="brown" (click)="Next()">NextQuizz</button><br>
+         </ion-row>
+
+         </div> 
+                          <!-- CategoryB
+ ============================================================================================= -->
+        <div *ngIf="Page2">
+        <h5>CategoryB</h5>
+ 
+        <div class="timeColor">
+                <div class="timer2">
+                 Timer : {{timerVal}}
+                </div>
+            </div>
+        
+        <h6>Q1.Look at the picture and Select The Correct Fruit Name</h6>
+              
+              <!-- <ion-slides autoplay="5000" loop="true" speed="3000">
+                  <ion-slide *ngFor="let slide of Food">
+                      <img src="{{slide.PicFruits}}"/>
+                      </ion-slide> 
+              </ion-slides> -->
+             <!-- <img src="{{slide.PicFruits}}"> -->
+
+            <img src="../../assets/imgs/avocado.jpg">
+            
+            
+           <ion-item>
+                <ion-label>Avocado</ion-label>
+               <ion-checkbox [(ngModel)]="avocado1"  color="brown"  ></ion-checkbox><br>
+              </ion-item>
+              <ion-item>
+                    <ion-label>Orange</ion-label>
+                   <ion-checkbox [(ngModel)]="Orange1"  color="brown" ></ion-checkbox>        
+                  </ion-item> 
+
+
+              <ion-item>
+                    <ion-label>Apples</ion-label>
+                   <ion-checkbox [(ngModel)]="Apples1"  color="brown" ></ion-checkbox>
+                  </ion-item>
+     
+        <ion-item>
+                <ion-label>waterMelon</ion-label>
+               <ion-checkbox [(ngModel)]="WaterMelon1"  color="brown" ></ion-checkbox>
+              </ion-item>
+             
+              <button ion-button  id="bt"  color="brown"  (click)="NextPic()">NextPic</button>
+              
+    </div>
+         
+                
+            
+<!-- ============================================================================================= -->
+            
+<div *ngIf="Page3">
+        <h5>CategoryB</h5>
+      
+                <div class="timeColor">
+                <div class="timer3">
+                    Timer : {{timerVal}}
+                </div>
+            </div>
+        
+        <h6>Q2.Look at the picture and Select The Correct Fruit Name</h6>
+          
+
+            <img src="../../assets/imgs/waterMelon.jpg">
+
+            <ion-item>
+                    <ion-label>Apples</ion-label>
+                   <ion-checkbox [(ngModel)]="Apples2"  color="brown" ></ion-checkbox>
+                  </ion-item>
+           <ion-item>
+                <ion-label>Avocado</ion-label>
+               <ion-checkbox [(ngModel)]="avocado2"  color="brown" ></ion-checkbox><br>
+              </ion-item>
+              <ion-item>
+                    <ion-label>Orange</ion-label>
+                   <ion-checkbox [(ngModel)]="Orange2"  color="brown" ></ion-checkbox>        
+                  </ion-item> 
+
+     
+               <ion-item>
+                <ion-label>waterMelon</ion-label>
+               <ion-checkbox [(ngModel)]="WaterMelon2"  color="brown" ></ion-checkbox>
+              </ion-item>
+       
+
+              <button ion-button  id="bt"  color="brown"  (click)="NextPic3()">NextPic</button>
+              
+           
+           </div>
+            
+<!-- ================================================================================================= -->
+        <div *ngIf="Page4">
+        <h5>CategoryB</h5>
+
+       
+                <div class="timeColor">
+                <div class="timer4">
+                    Timer : {{timerVal}}
+                </div>
+            </div>
+       
+        <h6>Q3.Look at the picture and Select The Correct Fruit Name</h6>
+          
+
+            <img src="../../assets/imgs/apples.jpg">
+
+           
+            <ion-item>
+                    <ion-label>waterMelon</ion-label>
+                   <ion-checkbox [(ngModel)]="WaterMelon3"  color="brown" ></ion-checkbox>
+                  </ion-item>
+            <ion-item>
+                    <ion-label>Apples</ion-label>
+                   <ion-checkbox [(ngModel)]="Apples3"  color="brown" ></ion-checkbox>
+                  </ion-item>
+         
+              <ion-item>
+                    <ion-label>Orange</ion-label>
+                   <ion-checkbox [(ngModel)]="Orange3"  color="brown" value1="correct" ></ion-checkbox>        
+                  </ion-item> 
+                  <ion-item>
+                        <ion-label>Avocado</ion-label>
+                       <ion-checkbox [(ngModel)]="avocado3"  color="brown" ></ion-checkbox><br>
+                      </ion-item>
+
+                      <button ion-button    color="brown"  (click)="NextPics4()">NextPic</button>
+            </div> 
+     <!-- ==================================================================================================       -->
+ 
+ <div *ngIf="Page5">
+        <h5>CategoryB</h5>
+     
+                <div class="timeColor">
+                <div class="timer5">
+                    Timer : {{timerVal}}
+                </div>
+            </div>
+     
+        <h5>Final ScoreB : {{count}}/4</h5>
+              
+        <h6>Q4.Look at the picture and Select The Correct Fruit Name</h6>
+          
+
+            <img src="../../assets/imgs/Orange.jpg">
+
+            <ion-item>
+                    <ion-label>waterMelon</ion-label>
+                   <ion-checkbox [(ngModel)]="WaterMelon4"  color="brown" ></ion-checkbox>
+                  </ion-item>
+            <ion-item>
+                    <ion-label>Apples</ion-label>
+                   <ion-checkbox [(ngModel)]="Apples4"  color="brown" ></ion-checkbox>
+                  </ion-item>
+         
+              <ion-item>
+                    <ion-label>Orange</ion-label>
+                   <ion-checkbox [(ngModel)]="Orange4"  color="brown" value1="correct" ></ion-checkbox>        
+                  </ion-item> 
+                  <ion-item>
+                        <ion-label>Avocado</ion-label>
+                       <ion-checkbox [(ngModel)]="avocado4"  color="brown" ></ion-checkbox><br>
+                      </ion-item>
+
+            <ion-row>
+                   
+                      <button ion-button   color="brown" (click)="AnswerButt()">Answers</button>
+                      <button ion-button   color="brown" (click)="Nextt()">NextQuizz</button> 
+            </ion-row>
+
+            <p>Q1:</p>
+        <div *ngIf="outcome">
+                <div class="val1">
+                      <div class="fontt">
+                      <p *ngIf="avocado1==true">You selected Right Answer</p>
+                      </div>
+                     
+  
+                      <div class="fontt2">
+                      <p *ngIf="Orange1==true">Wrong: Answer is Avocado</p>
+                      <p *ngIf="Apples1==true">Wrong: Answer is Avocado</p>
+                      <p *ngIf="WaterMelon1==true">Wrong: Answer is Avocado</p>
+                
+                      </div>
+                    </div>
+                  </div> 
+        <p>Q2:</p>
+        <div *ngIf="outcome">
+                <div class="val2">
+                      <div class="fontt">
+                      <p *ngIf="WaterMelon2==true" >You selected Right Answer</p>
+                   
+                      </div>
+                      </div>
+  
+                      <div class="fontt2">
+                      <p *ngIf="Orange2==true">Wrong: Answer is WaterMelon</p>
+                      <p *ngIf="Apples2==true">Wrong: Answer is  WaterMelon</p>
+                      <p *ngIf="avocado2==true">Wrong: Answer is  WaterMelon</p>
+                
+                      </div>
+                    
+                  </div> 
+        <p>Q3:</p> 
+        <div *ngIf="outcome">
+                <div class="val3">
+                      <div class="fontt">
+                            <p *ngIf="Apples3==true">You selected Right Answer</p>
+                   
+                      </div>
+                      </div>
+  
+                      <div class="fontt2">
+                      <p *ngIf="Orange3==true">Wrong: Answer is Apple</p>
+                      <p *ngIf="WaterMelon3==true">Wrong: Answer is Apple</p>
+                      <p *ngIf="avocado3==true">Wrong: Answer is Apple</p>
+                
+                      </div>
+                    
+                  </div>
+        <p>Q4:</p> 
+        <div *ngIf="outcome">
+                <div class="val2">
+                      <div class="fontt">
+                            <p *ngIf="Orange4==true">You selected Right Answer</p>   
+                      </div>
+                      </div>
+  
+                      <div class="fontt2">
+                      <p *ngIf="Apples4==true">You selected Wrong</p>
+                      <p *ngIf="WaterMelon4==true">You selected Wrong</p>
+                      <p *ngIf="avocado4==true">You selected Wrong</p>
+                
+                      </div>
+                    
+                  </div>     
+
+            </div> 
+
+                                        <!-- categoryC -->
+                                        <!-- Question1 -->
+ <!-- ===========================================================================================================================================      -->
+<div *ngIf="Page6">
+        <h5>CategoryC</h5>
+       
+                <div class="timeColor">
+                <div class="timer6">
+                    Timer :{{timerVal}}
+                </div>
+            </div>
+       
+        <h5>Final ScoreC : {{counter}} /6 </h5>
+        <div class="nav">
+                <h6>1. How many months do we have in a year?</h6>
+
+                <ion-item>
+                  <ion-label >30</ion-label>
+                 <ion-checkbox [(ngModel)]="one1" color="brown" ></ion-checkbox>
+                </ion-item>
+             
+                <ion-item>
+                   <ion-label>7</ion-label>
+                  <ion-checkbox [(ngModel)]="one2"  color="brown" ></ion-checkbox>
+                 </ion-item>
+             
+                 <ion-item>
+                     <ion-label>12</ion-label>
+                    <ion-checkbox [(ngModel)]="one3" color="brown" ></ion-checkbox>
+                   </ion-item>
+             
+                   <ion-item>
+                       <ion-label>31</ion-label>
+                      <ion-checkbox [(ngModel)]="one4"  color="brown" ></ion-checkbox>
+                     </ion-item>
+                   </div>
+                   <div *ngIf="Answer2">
+             
+                        <div class="fontt2">
+                          <div class="showA">
+                              <p *ngIf="one1== true ">Incorrect: Answer is 12</p>
+                              <p *ngIf="one2== true ">Incorrect: Answer is 12</p>
+                              <p *ngIf="one4== true ">Incorrect: Answer is 12</p>
+                          </div>
+                          </div>
+                  
+                          <div class="fontt"> 
+                              <p *ngIf="one3== true ">Your answer is correct</p>
+                              </div>
+                          </div>
+                    
+             
+                                                    <!-- Question2 -->
+               <!-- =========================================================================================== -->
+                    
+               <div class="nav">
+                     <h6>2. How many days do we have in a week?</h6>
+                  
+                      <ion-item>
+                          <ion-label>12</ion-label>
+                         <ion-checkbox [(ngModel)]="two1"  color="brown"  ></ion-checkbox>
+                        </ion-item>
+             
+                        <ion-item>
+                           <ion-label>31</ion-label>
+                          <ion-checkbox [(ngModel)]="two2"  color="brown" value="correct" ></ion-checkbox>
+                         </ion-item>
+                     
+                  
+                        <ion-item>
+                            <ion-label>30</ion-label>
+                           <ion-checkbox [(ngModel)]="two3"  color="brown" ></ion-checkbox>
+                          </ion-item>
+             
+                          <ion-item>
+                             <ion-label>7</ion-label>
+                            <ion-checkbox [(ngModel)]="two4"   color="brown"  ></ion-checkbox>
+                           </ion-item>
+                   
+                         </div>
+             
+                           
+                         <div *ngIf="Answer2">
+                           <div class="showB">
+                               <div class="fontt2">
+                               <p *ngIf="two1== true ">Incorrect: Answer is 7</p>
+                               <p *ngIf="two2== true ">Incorrect: Answer is 7</p>
+                               <p *ngIf="two3== true ">Incorrect: Answer is 7</p>
+                            </div>
+                        </div>
+                     
+             
+                           <div class="fontt"> 
+                               <p *ngIf="two4== true ">Your answer is correct</p>
+                          </div>
+                         
+                          </div>
+
+                                                     <!-- Question3 -->
+               <!-- =========================================================================================== -->
+                    
+               <div class="nav">
+                    <h6>3. How many days are the in a year?</h6>
+                 
+                     <ion-item>
+                         <ion-label>365</ion-label>
+                        <ion-checkbox [(ngModel)]="three1"  color="brown"  ></ion-checkbox>
+                       </ion-item>
+            
+                       <ion-item>
+                          <ion-label>388</ion-label>
+                         <ion-checkbox [(ngModel)]="three2"  color="brown" value="correct" ></ion-checkbox>
+                        </ion-item>
+                    
+                 
+                       <ion-item>
+                           <ion-label>330</ion-label>
+                          <ion-checkbox [(ngModel)]="three3"  color="brown" ></ion-checkbox>
+                         </ion-item>
+            
+                         <ion-item>
+                            <ion-label>12</ion-label>
+                           <ion-checkbox [(ngModel)]="three4"   color="brown"  ></ion-checkbox>
+                          </ion-item>
+                  
+                        </div>
+            
+                          
+                        <div *ngIf="Answer2">
+                          <div class="showC">
+                              <div class="fontt2">
+                              <p *ngIf="three2== true ">Incorrect: Answer is 365</p>
+                              <p *ngIf="three3== true ">Incorrect: Answer is 365</p>
+                              <p *ngIf="three4== true ">Incorrect: Answer is 365</p>
+                           </div>
+                       </div>
+                    
+            
+                          <div class="fontt"> 
+                              <p *ngIf="three1== true ">Your answer is correct</p>
+                         </div>
+                        
+                         </div>
+
+                                                       <!-- Question4 -->
+               <!-- =========================================================================================== -->
+                    
+               <div class="nav">
+                    <h6>4. Which Number comes after 6?</h6>
+                 
+                     <ion-item>
+                         <ion-label>8</ion-label>
+                        <ion-checkbox [(ngModel)]="Four1"  color="brown"  ></ion-checkbox>
+                       </ion-item>
+            
+                       <ion-item>
+                          <ion-label>6</ion-label>
+                         <ion-checkbox [(ngModel)]="Four2"  color="brown" value="correct" ></ion-checkbox>
+                        </ion-item>
+                    
+                 
+                       <ion-item>
+                           <ion-label>7</ion-label>
+                          <ion-checkbox [(ngModel)]="Four3"  color="brown" ></ion-checkbox>
+                         </ion-item>
+            
+                         <ion-item>
+                            <ion-label>5</ion-label>
+                           <ion-checkbox [(ngModel)]="Four4"   color="brown"  ></ion-checkbox>
+                          </ion-item>
+                  
+                        </div>
+            
+                          
+                        <div *ngIf="Answer2">
+                          <div class="showD">
+                              <div class="fontt2">
+                              <p *ngIf="Four1== true ">Incorrect: Answer is 7</p>
+                              <p *ngIf="Four2== true ">Incorrect: Answer is 7</p>
+                              <p *ngIf="Four4== true ">Incorrect: Answer is 7</p>
+                           </div>
+                       </div>
+                    
+            
+                          <div class="fontt"> 
+                              <p *ngIf="Four3== true ">Your answer is correct</p>
+                         </div>
+                        
+                         </div>
+                                                    <!-- Question5 -->
+               <!-- =========================================================================================== -->
+                    
+               <div class="nav">
+                    <h6>5. Which day comes after Monday?</h6>
+                 
+                     <ion-item>
+                         <ion-label>Wednesday</ion-label>
+                        <ion-checkbox [(ngModel)]="Five1"  color="brown"  ></ion-checkbox>
+                       </ion-item>
+            
+                       <ion-item>
+                          <ion-label>Tuesday</ion-label>
+                         <ion-checkbox [(ngModel)]="Five2"  color="brown" value="correct" ></ion-checkbox>
+                        </ion-item>
+                    
+                 
+                       <ion-item>
+                           <ion-label>Sunday</ion-label>
+                          <ion-checkbox [(ngModel)]="Five3"  color="brown" ></ion-checkbox>
+                         </ion-item>
+            
+                         <ion-item>
+                            <ion-label>Friday</ion-label>
+                           <ion-checkbox [(ngModel)]="Five4"   color="brown"  ></ion-checkbox>
+                          </ion-item>
+                  
+                        </div>
+            
+                          
+                        <div *ngIf="Answer2">
+                          <div class="showE">
+                              <div class="fontt2">
+                              <p *ngIf="Five1== true ">Incorrect: Answer is Tuesday</p>
+                              <p *ngIf="Five3== true ">Incorrect: Answer is Tuesday</p>
+                              <p *ngIf="Five4== true ">Incorrect: Answer is Tuesday</p>
+                              
+                           </div>
+                       </div>
+                    
+            
+                          <div class="fontt"> 
+                              <p *ngIf="Five2== true ">Your answer is correct</p>
+                         </div>
+                        
+                         </div>
+
+                                      <!-- Question6 -->
+               <!-- =========================================================================================== -->
+                    
+               <div class="nav">
+                    <h6>6. Which day comes after Thursday?</h6>
+                 
+                     <ion-item>
+                         <ion-label>Wednesday</ion-label>
+                        <ion-checkbox [(ngModel)]="six1"  color="brown"  ></ion-checkbox>
+                       </ion-item>
+            
+                       <ion-item>
+                          <ion-label>Tuesday</ion-label>
+                         <ion-checkbox [(ngModel)]="six2"  color="brown" value="correct" ></ion-checkbox>
+                        </ion-item>
+                    
+                 
+                       <ion-item>
+                           <ion-label>Sunday</ion-label>
+                          <ion-checkbox [(ngModel)]="six3"  color="brown" ></ion-checkbox>
+                         </ion-item>
+            
+                         <ion-item>
+                            <ion-label>Friday</ion-label>
+                           <ion-checkbox [(ngModel)]="six4"   color="brown"  ></ion-checkbox>
+                          </ion-item>
+                  
+                        </div>
+            
+                          
+                        <div *ngIf="Answer2">
+                          <div class="showE">
+                              <div class="fontt2">
+                              <p *ngIf="six1== true ">Incorrect: Answer is Friday</p>
+                              <p *ngIf="six2== true ">Incorrect: Answer is Friday</p>
+                              <p *ngIf="six3== true ">Incorrect: Answer is Friday</p>
+                           </div>
+                       </div>
+                    
+            
+                          <div class="fontt"> 
+                              <p *ngIf="six4== true ">Your answer is correct</p>
+                         </div>
+                        
+                         </div>
+                   
+                   
+                <button ion-button  id="btn"  color="brown" (click)="myButtonC()">Answers</button>
+                <button ion-button   color="brown" (click)="Nextt2()">Results</button>
+                   
+                    
+
+         </div>
+                                                 <!-- LastPage -->
+    <!-- ================================================================================================================== -->
+
+    <div *ngIf="Page7">
+        <h2>Thank You For Playing.....</h2>
+      
+        <img src="../../assets/imgs/kid.jpg" id="imag"  >
+    
+        <u><h4>Score Results</h4></u>
+    
+               <div class="timeColor">
+                <div class="timer7">
+                    You Finished in:{{timerVal}} seconds
+                </div>
+            </div>
+        
+        <div class="textC">
+        <b><p>CategoryA: {{num}}/5</p></b>
+        <b><p>CategoryB: {{count}}/4</p></b>
+        <b><p>CategoryC: {{counter}}/6</p>
+        <h3>Total Score: {{Total}}/15</h3></b>
+        </div>
+ 
+    <button ion-button  id="btton"  color="brown" (click)=" myResults()">Score</button>
+    <button ion-button color="brown" id="bb"  (click)="Goback()">Replay</button>
+   
+
+    </div>
+
+
+             
+            
+  
+      
+ 

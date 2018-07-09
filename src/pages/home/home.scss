@@ -1,3 +1,79 @@
-page-home {
+h6{
+ text-align: left;
+ 
+
 
 }
+h5{
+    text-align: center;
+    color: brown;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2{
+    text-align: center;
+    color: brown;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h4{
+    text-align: center;
+    color: brown;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h3{
+    text-align: center;
+}
+
+.fontt{
+  
+    color:#2e8b57;
+
+}
+.fontt2{
+    color: #f53d3d;
+}
+.nav{
+    background-color:gold;
+    border-radius: 10px;
+    padding: 5px;
+   
+}
+
+ion-content{
+    background:  moccasin !important;
+}
+
+.title{
+   
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.img[id="imag"]{
+        align-items: center;
+        height:300px;
+}
+.textC{
+    text-align: center;
+}
+button[id="bb"]
+{
+   
+    margin: auto;
+    margin-left:100px;
+
+    
+}
+
+button[id="press"]{
+    margin-left: 50px;
+    top:100px;
+
+}
+
+#movePic{
+    margin-left: 15px;
+}
+.timeColor{
+    color: brown;
+    text-align: center;
+}
+
